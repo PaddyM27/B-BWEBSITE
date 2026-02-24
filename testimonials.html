@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Stories — Barbells & Babies</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:        #1A7272;
+      --teal-mid:    #0E5050;
+      --teal-dark:   #0A3A3A;
+      --teal-deep:   #072828;
+      --pink:        #F0A8A0;
+      --pink-light:  #F8D4CE;
+      --pink-pale:   #FDF2EF;
+      --magenta:     #CC00A0;
+      --cream:       #FAF8F5;
+      --off-white:   #F5F2EE;
+      --border:      #E4DCDA;
+      --body:        #2C3E3E;
+      --muted:       #7A9090;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--cream);
+      color: var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--teal-deep);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      height: 58px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+    }
+    .nav-logo-img { width: 38px; height: 38px; object-fit: contain; }
+    .nav-brand-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: white;
+      line-height: 1.15;
+    }
+    .nav-brand-sub {
+      font-size: 10px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.04em;
+      margin-top: 1px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2px; }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: color 0.15s, background 0.15s;
+    }
+    .nav-link:hover { color: white; background: rgba(255,255,255,0.07); }
+    .nav-link.active { color: white; }
+    .btn-nav-cta {
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--magenta);
+      color: white;
+      padding: 9px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 16px rgba(204,0,160,0.35);
+      transition: opacity 0.15s;
+    }
+    .btn-nav-cta:hover { opacity: 0.88; }
+
+    /* ── PAGE HERO ── */
+    .page-hero {
+      padding-top: 58px;
+      background: var(--teal-deep);
+      padding-bottom: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-lights {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 10% 80%, rgba(240,168,160,0.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 20%, rgba(204,0,160,0.14) 0%, transparent 48%);
+      pointer-events: none;
+    }
+    .page-hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 84px 28px 96px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .page-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pink);
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+    .eyebrow-dot { width: 5px; height: 5px; background: var(--magenta); border-radius: 50%; }
+    .page-hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 5.5vw, 76px);
+      font-weight: 600;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      color: white;
+      margin-bottom: 22px;
+    }
+    .page-hero-title em { font-style: italic; color: var(--pink); }
+    .page-hero-sub {
+      font-size: 15.5px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .page-hero-stars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 28px;
+      font-size: 20px;
+      color: var(--pink);
+      letter-spacing: 2px;
+    }
+    .page-hero-stars span {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.02em;
+      margin-left: 10px;
+    }
+
+    /* Wave divider */
+    .wave-divider { display: block; margin-bottom: -2px; }
+
+    /* ── TESTIMONIALS GRID ── */
+    .testimonials-section {
+      background: var(--cream);
+      padding: 80px 28px;
+    }
+    .testimonials-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Featured card — Debbie */
+    .tcard-featured {
+      background: var(--teal-deep);
+      border-radius: 28px;
+      padding: 52px 56px;
+      margin-bottom: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+    .tcard-featured-lights {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 88% 5%, rgba(240,168,160,0.15) 0%, transparent 45%),
+        radial-gradient(ellipse at 5% 95%, rgba(204,0,160,0.1) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .tcard-featured-inner { position: relative; z-index: 1; }
+    .tcard-featured-quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 120px;
+      font-weight: 300;
+      color: rgba(240,168,160,0.18);
+      line-height: 0.7;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .tcard-featured-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(19px, 2vw, 24px);
+      font-style: italic;
+      font-weight: 400;
+      color: rgba(255,255,255,0.92);
+      line-height: 1.72;
+      margin-bottom: 36px;
+    }
+    .tcard-featured-quote p { margin-bottom: 1.2em; }
+    .tcard-featured-quote p:last-child { margin-bottom: 0; }
+    .tcard-featured-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .tcard-featured-author {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .tcard-avatar-lg {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--pink);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--teal-deep);
+      flex-shrink: 0;
+    }
+    .tcard-author-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: white;
+    }
+    .tcard-author-meta {
+      font-size: 12px;
+      color: rgba(255,255,255,0.42);
+      margin-top: 2px;
+    }
+    .tcard-featured-stat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(240,168,160,0.12);
+      border: 1px solid rgba(240,168,160,0.2);
+      border-radius: 14px;
+      padding: 14px 22px;
+    }
+    .tcard-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 38px;
+      font-weight: 600;
+      color: var(--pink);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .tcard-stat-label {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.4;
+    }
+    .tcard-stars-lg {
+      color: var(--pink);
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+
+    /* Regular cards — Amy & Maria */
+    .tcard-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .tcard {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 38px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .tcard:hover {
+      box-shadow: 0 8px 40px rgba(7,40,40,0.09);
+      transform: translateY(-3px);
+    }
+    .tcard-top {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: 22px;
+    }
+    .tcard-avatar-md {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: white;
+      flex-shrink: 0;
+    }
+    .avatar-teal    { background: var(--teal); }
+    .avatar-magenta { background: var(--magenta); }
+    .tcard-name {
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--teal-deep);
+    }
+    .tcard-meta {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+    .tcard-stars {
+      margin-left: auto;
+      color: var(--magenta);
+      font-size: 14px;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+    .tcard-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.72;
+      color: var(--teal-deep);
+      font-weight: 400;
+    }
+    .tcard-quote p { margin-bottom: 1.1em; }
+    .tcard-quote p:last-child { margin-bottom: 0; }
+    .tcard-stat-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .tcard-stat-row .tcard-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px;
+      font-weight: 600;
+      color: var(--magenta);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .tcard-stat-row .tcard-stat-label {
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+
+    /* ── CTA STRIP ── */
+    .cta-strip {
+      background: var(--teal-deep);
+      padding: 72px 28px;
+      text-align: center;
+    }
+    .cta-strip h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.5vw, 52px);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: white;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+    .cta-strip h2 em { font-style: italic; color: var(--pink); }
+    .cta-strip p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.75;
+      max-width: 500px;
+      margin: 0 auto 38px;
+    }
+    .cta-strip-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+    .btn-strip-primary {
+      background: var(--magenta);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 30px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 24px rgba(204,0,160,0.4);
+      transition: opacity 0.15s;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-strip-primary:hover { opacity: 0.88; }
+    .btn-strip-ghost {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 14px 30px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.22);
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: background 0.15s;
+    }
+    .btn-strip-ghost:hover { background: rgba(255,255,255,0.18); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--teal-deep); padding: 56px 28px 32px; }
+    .footer-inner { max-width: 1320px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 52px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 28px;
+    }
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: white;
+      margin-top: 13px;
+      margin-bottom: 4px;
+    }
+    .footer-brand-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 22px;
+    }
+    .footer-contact-row {
+      display: flex; align-items: center; gap: 9px;
+      font-size: 13px; color: rgba(255,255,255,0.5); margin-bottom: 9px;
+    }
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 18px;
+    }
+    .footer-link {
+      display: block;
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.56);
+      margin-bottom: 11px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-link:hover { color: white; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.28); }
+    .footer-socials { display: flex; gap: 8px; }
+    .social-btn {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.15s;
+      text-decoration: none;
+    }
+    .social-btn:hover { background: rgba(255,255,255,0.14); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="logo.png" alt="Barbells & Babies logo" class="nav-logo-img">
+        <div>
+          <div class="nav-brand-text">Barbells &amp; Babies</div>
+          <div class="nav-brand-sub">with Julianne Meade-McIntyre</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#programme">Programme</a>
+        <a class="nav-link active" href="testimonials.html">Testimonials</a>
+      </div>
+      <div>
+        <button class="btn-nav-cta" onclick="window.open('https://barbellsandbabies.online/waitlist','_blank')">Join the Priority List →</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-lights"></div>
+    <div class="page-hero-inner">
+      <div class="page-hero-eyebrow">
+        <span class="eyebrow-dot"></span>
+        Real Women. Real Results.
+      </div>
+      <h1 class="page-hero-title">What our <em>mums</em> say.</h1>
+      <p class="page-hero-sub">Hundreds of women across Ireland have trusted Barbells &amp; Babies with their most important health journey. Here are some of their stories.</p>
+      <div class="page-hero-stars">
+        ★★★★★
+        <span>5-star rated programme</span>
+      </div>
+    </div>
+    <!-- Wave into cream -->
+    <svg class="wave-divider" viewBox="0 0 1440 56" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%;height:56px;display:block;">
+      <path d="M0 56 Q360 0 720 28 Q1080 56 1440 28 L1440 56 Z" fill="#FAF8F5"/>
+    </svg>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="testimonials-inner">
+
+      <!-- Featured — Debbie -->
+      <div class="tcard-featured">
+        <div class="tcard-featured-lights"></div>
+        <div class="tcard-featured-inner">
+          <span class="tcard-featured-quote-mark">"</span>
+          <div class="tcard-featured-quote">
+            <p>After struggling with postpartum weight loss for what felt like forever, I truly believed it was impossible. Between sleepless nights, returning to work, and feeling completely drained, I was stuck. I had even been back at the gym for a year — but still, the scale wouldn't budge.</p>
+            <p>Then I started the 8-week programme with B&amp;B, and everything changed. I lost 10lbs – and that was with three bank holidays, a wedding, and Easter in the mix! What's more amazing is that I never felt hungry or restricted during the process.</p>
+            <p>Julianne was a constant source of support and motivation. She helped guide me with her realistic tools and manageable home workouts that actually fit into my chaotic schedule. Thanks to her, I now have more energy, feel like myself again, and — most exciting of all — I feel ready to try for baby #2.</p>
+            <p>This time, I won't wait two years postpartum to get support. Can't recommend B&amp;B and Julianne enough. If you're on the fence — do it. Your future self will thank you."</p>
+          </div>
+          <div class="tcard-featured-footer">
+            <div class="tcard-featured-author">
+              <div class="tcard-avatar-lg">D</div>
+              <div>
+                <div class="tcard-author-name">Debbie</div>
+                <div class="tcard-author-meta">8-Week Postnatal Programme</div>
+              </div>
+            </div>
+            <div class="tcard-stars-lg">★★★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Amy & Maria -->
+      <div class="tcard-row">
+
+        <!-- Amy -->
+        <div class="tcard">
+          <div class="tcard-top">
+            <div class="tcard-avatar-md avatar-teal">A</div>
+            <div>
+              <div class="tcard-name">Amy</div>
+              <div class="tcard-meta">12-Week Programme</div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <div class="tcard-quote">
+            <p>My experience so far with Julianne has been amazing. I used to view 'bad food' as something I should totally avoid and in the past I would completely restrict myself in order to lose weight and still didn't feel confident. She taught me how I can enjoy my meals out at the weekend and treats during the week and still see results.</p>
+            <p>However the programme has not only been about the results on the scale – I have become a better version of myself and this has reflected in my relationships and in my career as I am now learning to take on projects and life learning experiences. There is something about weight training in the morning that makes you feel you can conquer anything that day.</p>
+            <p>Julianne is such a lovely person and so approachable if you have any issues with the programme. Julianne is there to keep you on track and will tailor the programme to suit your life at any given time.</p>
+          </div>
+        </div>
+
+        <!-- Maria -->
+        <div class="tcard">
+          <div class="tcard-top">
+            <div class="tcard-avatar-md avatar-magenta">M</div>
+            <div>
+              <div class="tcard-name">Maria</div>
+              <div class="tcard-meta">12-Week Programme</div>
+            </div>
+            <div class="tcard-stars">★★★★★</div>
+          </div>
+          <div class="tcard-quote">
+            <p>I have the healthiest relationship with food and lifestyle I have had in all my life. I still go and do all the things I like to do, eat with friends, go for nights out — but with help from Julianne it's not an all-or-nothing mindset. I don't feel like I have to 'earn' food or get back at it the next day.</p>
+            <p>I have been 'dieting' and exercising for years and I thought I could write the book — but postpartum and breastfeeding I really struggled to lose the 4 stone I put on. I tried every programme available and just couldn't get started. I joined the 12-week programme and to say I lost 4 stone is an understatement of how life-changing it's been.</p>
+            <p>The app is so easy to use — daily things to check off, plus the option to go for nutrition, exercise education, or be able to chat to Julianne. Absolutely brilliant.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-strip">
+    <h2>Ready to write <em>your</em> story?</h2>
+    <p>Join the priority list and be first to secure your place on the next round of Barbells &amp; Babies — the programme hundreds of Irish mothers swear by.</p>
+    <div class="cta-strip-btns">
+      <a class="btn-strip-primary" href="https://barbellsandbabies.online/waitlist" target="_blank">Join the Priority List →</a>
+      <a class="btn-strip-ghost" href="index.html">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <img src="logo.png" alt="Barbells & Babies" style="width:44px;height:44px;object-fit:contain;">
+          <div class="footer-brand-name">Barbells &amp; Babies</div>
+          <div class="footer-brand-tagline">the programme · the lifestyle · the change</div>
+          <div class="footer-contact-row"><span>✉</span><span>barbellsandbabiez@gmail.com</span></div>
+          <div class="footer-contact-row"><span>📞</span><span>087 118 4984</span></div>
+          <div class="footer-contact-row"><span>🌐</span><span>barbellsandbabies.ie</span></div>
+        </div>
+        <div>
+          <div class="footer-col-title">Programme</div>
+          <a class="footer-link" href="https://barbellsandbabies.online/waitlist" target="_blank">Join the Priority List</a>
+          <a class="footer-link" href="https://trainerize.me/profile/barbellsandbabies" target="_blank">B&amp;B App</a>
+          <a class="footer-link" href="https://barbellsandbabiesshop.myshopify.com" target="_blank">B&amp;B Shop</a>
+          <a class="footer-link" href="https://barbellsandbabies.ie/programmes/" target="_blank">About the Programme</a>
+        </div>
+        <div>
+          <div class="footer-col-title">About</div>
+          <a class="footer-link" href="index.html#about">About Julianne</a>
+          <a class="footer-link" href="index.html#programme">Our Approach</a>
+          <a class="footer-link" href="testimonials.html">Testimonials</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Follow Along</div>
+          <a class="footer-link" href="https://www.instagram.com/barbells_and_babiez" target="_blank">Instagram @barbells_and_babiez</a>
+          <a class="footer-link" href="https://www.facebook.com/barbellsandbabiez" target="_blank">Facebook</a>
+          <a class="footer-link" href="https://www.tiktok.com/@juliannemeade.bandb" target="_blank">TikTok @juliannemeade.bandb</a>
+          <a class="footer-link" href="https://www.youtube.com/@barbellsandbabiez" target="_blank">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 Barbells &amp; Babies · Julianne Meade-McIntyre · barbellsandbabies.ie</span>
+        <div class="footer-socials">
+          <a class="social-btn" href="https://www.instagram.com/barbells_and_babiez" target="_blank" style="text-decoration:none;">📸</a>
+          <a class="social-btn" href="https://www.facebook.com/barbellsandbabiez" target="_blank" style="text-decoration:none;">👥</a>
+          <a class="social-btn" href="https://www.tiktok.com/@juliannemeade.bandb" target="_blank" style="text-decoration:none;">🎵</a>
+          <a class="social-btn" href="https://www.youtube.com/@barbellsandbabiez" target="_blank" style="text-decoration:none;">▶</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

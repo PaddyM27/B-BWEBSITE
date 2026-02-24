@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barbells & Babies — Pre & Postnatal Fitness Coaching with Julianne Meade-McIntyre</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --teal:        #1A7272;
+      --teal-mid:    #0E5050;
+      --teal-dark:   #0A3A3A;
+      --teal-deep:   #072828;
+      --pink:        #F0A8A0;
+      --pink-light:  #F8D4CE;
+      --pink-pale:   #FDF2EF;
+      --magenta:     #CC00A0;
+      --magenta-glow:#E020B8;
+      --cream:       #FAF8F5;
+      --off-white:   #F5F2EE;
+      --border:      #E4DCDA;
+      --body:        #2C3E3E;
+      --muted:       #7A9090;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: white;
+      color: var(--body);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── FLOWER MARK ── */
+    .flower { display: inline-flex; }
+    .nav-logo-img { width: 38px; height: 38px; object-fit: contain; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: var(--teal-deep);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      height: 58px;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .nav-brand-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: white;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+    }
+    .nav-brand-sub {
+      font-family: 'Outfit', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.04em;
+      margin-top: 1px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+    .nav-link {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.6);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: color 0.15s, background 0.15s;
+    }
+    .nav-link:hover { color: white; background: rgba(255,255,255,0.07); }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .btn-nav-ghost {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+    .btn-nav-cta {
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--magenta);
+      color: white;
+      padding: 9px 20px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: opacity 0.15s;
+      box-shadow: 0 2px 16px rgba(204,0,160,0.35);
+    }
+    .btn-nav-cta:hover { opacity: 0.88; }
+
+    /* ── HERO ── */
+    .hero {
+      padding-top: 58px;
+      background: var(--cream);
+    }
+    .hero-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      align-items: center;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 80px 28px 68px;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(26,114,114,0.1);
+      border: 1px solid rgba(26,114,114,0.15);
+      padding: 7px 14px;
+      border-radius: 30px;
+      margin-bottom: 24px;
+    }
+    .eyebrow-dot {
+      width: 6px; height: 6px;
+      background: var(--magenta);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(44px, 4.8vw, 72px);
+      font-weight: 600;
+      line-height: 1.04;
+      letter-spacing: -0.025em;
+      color: var(--teal-deep);
+      max-width: 560px;
+    }
+    .hero-headline em {
+      font-style: italic;
+      color: var(--magenta);
+    }
+    .hero-sub {
+      margin-top: 22px;
+      font-size: 15.5px;
+      line-height: 1.78;
+      color: #5A7272;
+      max-width: 460px;
+      font-weight: 400;
+    }
+    .hero-ctas {
+      margin-top: 34px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--teal);
+      color: white;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.01em;
+      transition: opacity 0.15s;
+      box-shadow: 0 4px 20px rgba(26,114,114,0.3);
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: transparent;
+      color: var(--teal-dark);
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 10px;
+      border: 1.5px solid rgba(10,58,58,0.22);
+      cursor: pointer;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .btn-outline:hover { border-color: var(--teal); background: rgba(26,114,114,0.05); }
+
+    .hero-social-proof {
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .proof-avatars { display: flex; }
+    .proof-avatar {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 2px solid var(--cream);
+      background: var(--pink-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+      margin-left: -9px;
+    }
+    .proof-avatar:first-child { margin-left: 0; }
+    .proof-text { font-size: 12.5px; color: var(--muted); }
+    .proof-text strong { color: var(--teal-deep); font-weight: 600; }
+
+    /* Hero image side */
+    .hero-right { position: relative; }
+    .hero-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center 28%;
+      border-radius: 28px;
+      display: block;
+      background: #e8e0d8;
+    }
+    .hero-badge {
+      position: absolute;
+      top: 24px;
+      right: -14px;
+      background: var(--teal-deep);
+      color: white;
+      border-radius: 16px;
+      padding: 14px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.55;
+      letter-spacing: 0.02em;
+      box-shadow: 0 8px 30px rgba(7,40,40,0.25);
+    }
+    .hero-badge .badge-star { color: var(--pink); font-size: 14px; display: block; margin-bottom: 4px; }
+    .hero-notif {
+      position: absolute;
+      bottom: 100px;
+      left: -18px;
+      background: white;
+      border-radius: 16px;
+      padding: 13px 16px;
+      box-shadow: 0 8px 40px rgba(7,40,40,0.13), 0 2px 8px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      max-width: 250px;
+    }
+    .notif-icon {
+      width: 38px; height: 38px;
+      border-radius: 11px;
+      background: rgba(204,0,160,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .notif-title { font-size: 12.5px; font-weight: 600; color: var(--teal-deep); line-height: 1.3; }
+    .notif-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .hero-tagline-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .tagline-pill {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-style: italic;
+      font-weight: 500;
+      color: var(--teal);
+      background: white;
+      border: 1px solid rgba(26,114,114,0.18);
+      padding: 7px 18px;
+      border-radius: 30px;
+      box-shadow: 0 1px 4px rgba(26,114,114,0.07);
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: white;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 34px 28px;
+    }
+    .stats-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .stat-icon {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: rgba(204,0,160,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1;
+      color: var(--teal-deep);
+    }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+    /* ── DARK TEAL SECTION ── */
+    .section-teal {
+      background: var(--teal-deep);
+      color: white;
+    }
+    .section-header-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      align-items: start;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 84px 28px 56px;
+    }
+    .section-header-2col h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 3.2vw, 52px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+    }
+    .section-header-2col h2 em { font-style: italic; color: var(--pink); }
+    .section-header-2col p {
+      font-size: 14.5px;
+      line-height: 1.78;
+      color: rgba(255,255,255,0.55);
+      padding-top: 8px;
+      max-width: 460px;
+    }
+    .section-header-2col.light h2 { color: var(--teal-deep); }
+    .section-header-2col.light p { color: var(--muted); }
+
+    /* ── SERVICE CARDS ── */
+    .service-cards {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 28px 84px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+    .scard {
+      background: #0E3838;
+      border-radius: 20px;
+      padding: 22px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.07);
+      transition: transform 0.32s cubic-bezier(0.34,1.56,0.64,1),
+                  background-color 0.38s ease,
+                  border-color 0.38s ease;
+    }
+    .scard:hover {
+      transform: translateY(-7px);
+      background: var(--pink);
+      border-color: rgba(7,40,40,0.08);
+    }
+    .scard-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 8px;
+      transition: color 0.38s ease;
+    }
+    .scard:hover .scard-label { color: rgba(7,40,40,0.55); }
+    .scard-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.32;
+      margin-bottom: 24px;
+      transition: color 0.38s ease;
+    }
+    .scard:hover .scard-title { color: var(--teal-deep); }
+    .scard-visual {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: 13px;
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      overflow: hidden;
+      transition: background 0.38s ease;
+    }
+    .scard:hover .scard-visual { background: rgba(7,40,40,0.08); }
+    .scard-visual img { width: 100%; height: 100%; object-fit: cover; border-radius: 13px; }
+
+    /* ── CREDENTIALS STRIP ── */
+    .creds-strip {
+      overflow: hidden;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 0;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 34s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .cred-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--teal-dark);
+      white-space: nowrap;
+      padding: 0 28px;
+      opacity: 0.72;
+    }
+    .cred-dot {
+      width: 5px; height: 5px;
+      background: var(--magenta);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 40px 28px 84px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .tcard {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 30px;
+      background: white;
+      transition: background 0.38s ease, border-color 0.38s ease, box-shadow 0.22s, transform 0.32s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .tcard:hover {
+      background: var(--teal-deep);
+      border-color: transparent;
+      box-shadow: 0 8px 40px rgba(7,40,40,0.22);
+      transform: translateY(-5px);
+    }
+    .tcard .tcard-name,
+    .tcard .tcard-meta,
+    .tcard .tcard-quote,
+    .tcard .stars { transition: color 0.38s ease; }
+    .tcard:hover .tcard-name { color: white; }
+    .tcard:hover .tcard-meta { color: rgba(255,255,255,0.45); }
+    .tcard:hover .tcard-quote { color: rgba(255,255,255,0.88); }
+    .tcard:hover .stars { color: var(--pink); }
+    .tcard-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+    .tcard-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--pink-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .tcard-name { font-size: 13.5px; font-weight: 600; color: var(--teal-deep); }
+    .tcard-meta { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+    .stars { color: var(--magenta); font-size: 13px; letter-spacing: 1px; margin-left: auto; }
+    .tcard-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--teal-deep);
+      font-weight: 400;
+    }
+
+    .tcard-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: white;
+      flex-shrink: 0;
+    }
+    .tcard-avatar-pink    { background: var(--pink); color: var(--teal-deep); }
+    .tcard-avatar-teal    { background: var(--teal); }
+    .tcard-avatar-magenta { background: var(--magenta); }
+    .tcard-stat {
+      margin-top: 22px;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(240,168,160,0.25);
+    }
+    .tcard-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--pink);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .tcard-stat-label {
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.45);
+      font-weight: 500;
+    }
+    .tcard:not(.tcard-highlight) .tcard-stat { border-top-color: var(--border); }
+    .tcard:not(.tcard-highlight) .tcard-stat-num { color: var(--magenta); }
+    .tcard:not(.tcard-highlight) .tcard-stat-label { color: var(--muted); }
+
+    /* ── VALUE SECTION ── */
+    .section-cream { background: var(--cream); }
+    .value-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 84px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 76px;
+      align-items: center;
+    }
+    .value-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 3.2vw, 52px);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--teal-deep);
+    }
+    .value-left h2 em { font-style: italic; color: var(--teal); }
+    .value-left p {
+      margin-top: 20px;
+      font-size: 14.5px;
+      line-height: 1.78;
+      color: #5A7272;
+    }
+    .programme-card {
+      background: white;
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: 0 2px 20px rgba(7,40,40,0.07), 0 8px 52px rgba(7,40,40,0.04);
+    }
+    .prog-heading {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+    .session-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .session-row:last-child { border-bottom: none; }
+    .session-icon {
+      width: 40px; height: 40px;
+      border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .si-teal    { background: rgba(26,114,114,0.1); }
+    .si-pink    { background: rgba(240,168,160,0.2); }
+    .si-magenta { background: rgba(204,0,160,0.08); }
+    .session-title { font-size: 13.5px; font-weight: 600; color: var(--teal-deep); }
+    .session-sub   { font-size: 11.5px; color: var(--muted); margin-top: 2px; }
+    .session-tag {
+      margin-left: auto;
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 5px 11px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .st-teal    { background: rgba(26,114,114,0.1); color: var(--teal); }
+    .st-pink    { background: rgba(240,168,160,0.22); color: #984848; }
+    .st-magenta { background: rgba(204,0,160,0.08); color: var(--magenta); }
+
+    /* ── APPROACH SECTION ── */
+    .approach-cards {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 28px 84px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .acard {
+      background: #0E3838;
+      border-radius: 24px;
+      padding: 38px;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .acard-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pink);
+      opacity: 0.65;
+      margin-bottom: 10px;
+    }
+    .acard-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: white;
+      line-height: 1.22;
+      margin-bottom: 12px;
+    }
+    .acard-body {
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.75;
+      margin-bottom: 30px;
+    }
+    .acard-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+      overflow: hidden;
+    }
+    .acard-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; }
+
+    /* ── ABOUT JULIANNE ── */
+    .about-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 84px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 76px;
+      align-items: start;
+    }
+    .about-img-wrap { position: relative; }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 28px;
+      background: #C9A8D0;
+      display: block;
+    }
+    .about-img-badge {
+      position: absolute;
+      bottom: 28px;
+      right: -14px;
+      background: var(--magenta);
+      color: white;
+      border-radius: 16px;
+      padding: 14px 18px;
+      font-size: 11.5px;
+      font-weight: 700;
+      line-height: 1.5;
+      text-align: center;
+      box-shadow: 0 4px 24px rgba(204,0,160,0.4);
+    }
+    .about-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+    .about-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 3.2vw, 50px);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--teal-deep);
+      margin-bottom: 8px;
+    }
+    .about-role {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-style: italic;
+      color: var(--teal);
+      margin-bottom: 26px;
+    }
+    .about-bio {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: #5A7272;
+      margin-bottom: 24px;
+    }
+    .cred-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 34px;
+    }
+    .cp {
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 6px 13px;
+      border-radius: 30px;
+    }
+    .cp-teal    { background: rgba(26,114,114,0.1); color: var(--teal); }
+    .cp-pink    { background: rgba(240,168,160,0.22); color: #984848; }
+    .cp-magenta { background: rgba(204,0,160,0.08); color: var(--magenta); }
+    .about-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 21px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.58;
+      color: var(--teal);
+      border-left: 3px solid var(--pink);
+      padding-left: 22px;
+    }
+    .about-cta { margin-top: 32px; }
+
+    /* ── HOW IT WORKS ── */
+    .section-white { background: white; }
+    .steps-inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 28px 84px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .step-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 36px;
+    }
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 300;
+      color: rgba(26,114,114,0.12);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+    .step-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--teal-deep);
+      margin-bottom: 11px;
+    }
+    .step-body {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted);
+    }
+
+    /* ── CLIENT STORIES MARQUEE ── */
+    .stories-marquee-wrap {
+      border-top: 2px solid var(--teal-deep);
+      border-bottom: 2px solid var(--teal-deep);
+      overflow: hidden;
+      padding: 13px 0;
+      margin-bottom: 56px;
+    }
+    .stories-marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 22s linear infinite;
+      align-items: center;
+    }
+    .story-marquee-item {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(38px, 4.8vw, 64px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+      padding: 0 40px;
+      line-height: 1;
+    }
+    .smi-dark   { color: var(--teal-deep); font-style: italic; }
+    .smi-accent { color: var(--magenta); font-style: normal; }
+
+    /* ── CASE STUDY CARDS ── */
+    .case-cards {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 28px 84px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .case-card {
+      background: var(--cream);
+      border-radius: 24px;
+      padding: 42px;
+    }
+    .case-eyebrow {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+    .case-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--teal-deep);
+      margin-bottom: 14px;
+    }
+    .case-quote {
+      font-size: 14px;
+      line-height: 1.75;
+      color: #5A7272;
+      font-style: italic;
+      margin-bottom: 30px;
+    }
+    .case-stats {
+      display: flex;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .cs-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--magenta);
+      line-height: 1;
+    }
+    .cs-label { font-size: 11.5px; color: var(--muted); margin-top: 4px; }
+    .btn-case {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--teal-deep);
+      color: white;
+      padding: 11px 22px;
+      border-radius: 9px;
+      cursor: pointer;
+    }
+
+    /* Visual card */
+    .visual-case-card {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 440px;
+      background: var(--teal-dark);
+    }
+    .vcg {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 3px;
+    }
+    .vcg-img { width: 100%; height: 100%; object-fit: cover; }
+    .vc-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(7,40,40,0.9) 28%, rgba(7,40,40,0.15) 100%);
+    }
+    .vc-content {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 28px;
+    }
+    .vc-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 14px;
+    }
+    .vc-notif {
+      background: white;
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .vcn-icon {
+      width: 38px; height: 38px;
+      background: rgba(204,0,160,0.1);
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .vcn-title { font-size: 13px; font-weight: 700; color: var(--teal-deep); }
+    .vcn-sub   { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      margin: 32px;
+      border-radius: 32px;
+      overflow: hidden;
+      position: relative;
+      padding: 84px 72px;
+      background: var(--teal);
+    }
+    .cta-grain {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.055;
+    }
+    .cta-lights {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 12% 55%, rgba(240,168,160,0.38) 0%, transparent 55%),
+        radial-gradient(ellipse at 88% 15%, rgba(204,0,160,0.22) 0%, transparent 48%),
+        radial-gradient(ellipse at 60% 95%, rgba(255,255,255,0.07) 0%, transparent 45%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 76px;
+      align-items: center;
+    }
+    /* Booking card visual */
+    .booking-card-wrap {
+      display: flex;
+      justify-content: center;
+    }
+    .booking-card {
+      position: relative;
+      width: 296px;
+    }
+    .bc-float-badge {
+      position: absolute;
+      top: -18px;
+      right: -18px;
+      background: var(--magenta);
+      color: white;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.4;
+      box-shadow: 0 4px 24px rgba(204,0,160,0.45);
+      z-index: 2;
+    }
+    .bc-outer {
+      background: rgba(255,255,255,0.14);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 24px;
+      padding: 22px;
+    }
+    .bc-inner {
+      background: white;
+      border-radius: 16px;
+      padding: 22px;
+    }
+    .bc-header {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .bc-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--pink-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+    .bc-name  { font-size: 13.5px; font-weight: 700; color: var(--teal-deep); }
+    .bc-role  { font-size: 11.5px; color: var(--muted); }
+    .bc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+    .bc-row:last-child { border-bottom: none; }
+    .bc-key { color: var(--muted); flex-shrink: 0; padding-top: 1px; }
+    .bc-val { font-weight: 600; color: var(--teal-deep); text-align: right; }
+    .bc-val.free { color: var(--teal); }
+
+    /* CTA text */
+    .cta-text { color: white; }
+    .cta-text h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(34px, 3.8vw, 56px);
+      font-weight: 600;
+      line-height: 1.07;
+      letter-spacing: -0.028em;
+      margin-bottom: 20px;
+    }
+    .cta-text p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.75;
+      margin-bottom: 38px;
+      max-width: 420px;
+    }
+    .cta-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-cta-white {
+      background: white;
+      color: var(--teal-deep);
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .btn-cta-white:hover { opacity: 0.9; }
+    .btn-cta-ghost {
+      background: rgba(255,255,255,0.13);
+      color: white;
+      font-size: 13.5px;
+      font-weight: 600;
+      padding: 14px 28px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.28);
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: background 0.15s;
+    }
+    .btn-cta-ghost:hover { background: rgba(255,255,255,0.2); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--teal-deep);
+      padding: 56px 28px 32px;
+    }
+    .footer-inner { max-width: 1320px; margin: 0 auto; }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr 1fr;
+      gap: 52px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 28px;
+    }
+    .footer-brand-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: white;
+      margin-top: 13px;
+      margin-bottom: 4px;
+    }
+    .footer-brand-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 22px;
+    }
+    .footer-contact-row {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 9px;
+    }
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 18px;
+    }
+    .footer-link {
+      display: block;
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.56);
+      margin-bottom: 11px;
+      cursor: pointer;
+      transition: color 0.15s;
+      text-decoration: none;
+    }
+    .footer-link:hover { color: white; }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.28); }
+    .footer-socials { display: flex; gap: 8px; }
+    .social-btn {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.15s;
+    }
+    .social-btn:hover { background: rgba(255,255,255,0.14); }
+
+    /* ── DIVIDER ── */
+    .section-divider { border: none; border-top: 1px solid var(--border); }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════ NAV ════════════════ -->
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-brand" href="#">
+        <img src="logo.png" alt="Barbells & Babies logo" class="nav-logo-img">
+        <div>
+          <div class="nav-brand-text">Barbells &amp; Babies</div>
+          <div class="nav-brand-sub">with Julianne Meade-McIntyre</div>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#programme">Programme</a>
+        <a class="nav-link" href="testimonials.html">Testimonials</a>
+      </div>
+      <div class="nav-right">
+        <button class="btn-nav-cta" onclick="window.open('https://barbellsandbabies.online/waitlist','_blank')">Join the Priority List →</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section class="hero">
+    <div class="hero-main">
+      <!-- Left -->
+      <div>
+        <div class="hero-eyebrow">
+          <span class="eyebrow-dot"></span>
+          Pre &amp; Postnatal Coaching · Ireland
+        </div>
+        <h1 class="hero-headline">Strong through <em>every stage</em> of motherhood.</h1>
+        <p class="hero-sub">A realistic, medically backed fitness, nutrition and lifestyle programme for pre- and postnatal women — designed by Julianne, a Registered Nurse and Clinical Pain Management Specialist.</p>
+        <div class="hero-ctas">
+          <button class="btn-primary" onclick="window.open('https://barbellsandbabies.online/waitlist','_blank')">Join the Priority List &rarr;</button>
+          <button class="btn-outline" onclick="document.getElementById('programme').scrollIntoView({behavior:'smooth'})">Explore the Programme</button>
+        </div>
+        <div class="hero-social-proof">
+          <div class="proof-avatars">
+            <div class="proof-avatar">👩</div>
+            <div class="proof-avatar">👩</div>
+            <div class="proof-avatar">👩</div>
+            <div class="proof-avatar">👩</div>
+          </div>
+          <div class="proof-text"><strong>200+ mums</strong> supported across Ireland</div>
+        </div>
+      </div>
+
+      <!-- Right -->
+      <div class="hero-right">
+        <img class="hero-img" src="julianne-coaching.jpg" alt="Julianne Meade-McIntyre — Barbells & Babies Coach">
+        <div class="hero-badge">
+          <span class="badge-star">✦</span>
+          Medically<br>Informed &amp;<br>Body-Safe
+        </div>
+        <div class="hero-notif">
+          <div class="notif-icon">🌸</div>
+          <div>
+            <div class="notif-title">Session booked with Julianne</div>
+            <div class="notif-sub">Postnatal Week 8 · Today at 10am</div>
+          </div>
+        </div>
+        <div class="hero-tagline-pills">
+          <span class="tagline-pill">the programme</span>
+          <span class="tagline-pill">the lifestyle</span>
+          <span class="tagline-pill">the change</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ STATS ════════════════ -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-icon">🌸</div>
+        <div>
+          <div class="stat-num">200+</div>
+          <div class="stat-label">Mums supported across Ireland</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">🏥</div>
+        <div>
+          <div class="stat-num">RGN</div>
+          <div class="stat-label">Registered General Nurse &amp; Pain Specialist</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">📱</div>
+        <div>
+          <div class="stat-num">App</div>
+          <div class="stat-label">Train anytime via the B&amp;B app</div>
+        </div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">🗓️</div>
+        <div>
+          <div class="stat-num">2.03</div>
+          <div class="stat-label">Next programme start date</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ SERVICES (TEAL) ════════════════ -->
+  <section class="section-teal" id="programme">
+    <div class="section-header-2col">
+      <h2>Fitness through pregnancy was never meant to feel like <em>guesswork.</em></h2>
+      <p>Barbells &amp; Babies changes that — with evidence-based, body-safe coaching tailored for every stage, from your first trimester right through postnatal recovery and beyond.</p>
+    </div>
+    <div class="service-cards">
+      <div class="scard">
+        <div class="scard-label">Prenatal Fitness</div>
+        <div class="scard-title">Stay strong &amp; mobile throughout your pregnancy</div>
+        <div class="scard-visual">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=533&fit=crop&q=80" alt="Prenatal fitness">
+        </div>
+      </div>
+      <div class="scard">
+        <div class="scard-label">Postnatal Recovery</div>
+        <div class="scard-title">Rebuild your strength safely after birth</div>
+        <div class="scard-visual">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=533&fit=crop&q=80" alt="Postnatal recovery">
+        </div>
+      </div>
+      <div class="scard">
+        <div class="scard-label">Nutrition Guidance</div>
+        <div class="scard-title">Fuelling your body for you and your baby</div>
+        <div class="scard-visual">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=533&fit=crop&q=80" alt="Healthy nutrition">
+        </div>
+      </div>
+      <div class="scard">
+        <div class="scard-label">B&amp;B App</div>
+        <div class="scard-title">Your workouts &amp; plans — all in one place</div>
+        <div class="scard-visual">
+          <img src="app-photo.jpg" alt="Woman using B&B fitness app" style="object-position:60% center;">
+        </div>
+      </div>
+      <div class="scard">
+        <div class="scard-label">B&amp;B Shop</div>
+        <div class="scard-title">Everything you need to support your journey</div>
+        <div class="scard-visual">
+          <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=400&h=533&fit=crop&q=80" alt="Fitness equipment">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ TRUST / CREDENTIALS (WHITE) ════════════════ -->
+  <section class="section-white" id="testimonials">
+    <div class="section-header-2col light">
+      <h2>Trusted by hundreds of mothers across Ireland.</h2>
+      <p>From first pregnancies to fourth — Barbells &amp; Babies is the programme women return to because it works, it's safe, and it actually fits into real life.</p>
+    </div>
+
+    <!-- Credentials Marquee -->
+    <div class="creds-strip">
+      <div class="marquee-track">
+        <span class="cred-item"><span class="cred-dot"></span>Registered General Nurse (RGN)</span>
+        <span class="cred-item"><span class="cred-dot"></span>Clinical Pain Management Specialist</span>
+        <span class="cred-item"><span class="cred-dot"></span>Certified Pre &amp; Postnatal Trainer</span>
+        <span class="cred-item"><span class="cred-dot"></span>Nutrition Coach</span>
+        <span class="cred-item"><span class="cred-dot"></span>Personal Trainer</span>
+        <span class="cred-item"><span class="cred-dot"></span>GPP Qualified</span>
+        <span class="cred-item"><span class="cred-dot"></span>Medically Backed Programming</span>
+        <span class="cred-item"><span class="cred-dot"></span>Realistic Lifestyle Approach</span>
+        <span class="cred-item"><span class="cred-dot"></span>Registered General Nurse (RGN)</span>
+        <span class="cred-item"><span class="cred-dot"></span>Clinical Pain Management Specialist</span>
+        <span class="cred-item"><span class="cred-dot"></span>Certified Pre &amp; Postnatal Trainer</span>
+        <span class="cred-item"><span class="cred-dot"></span>Nutrition Coach</span>
+        <span class="cred-item"><span class="cred-dot"></span>Personal Trainer</span>
+        <span class="cred-item"><span class="cred-dot"></span>GPP Qualified</span>
+        <span class="cred-item"><span class="cred-dot"></span>Medically Backed Programming</span>
+        <span class="cred-item"><span class="cred-dot"></span>Realistic Lifestyle Approach</span>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials" style="grid-template-columns:repeat(3,1fr);">
+      <div class="tcard">
+        <div class="tcard-top">
+          <div class="tcard-avatar tcard-avatar-pink">D</div>
+          <div>
+            <div class="tcard-name">Debbie</div>
+            <div class="tcard-meta">Postnatal · 8-Week Programme</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="tcard-quote">"I lost weight – and that was with three bank holidays, a wedding, and Easter in the mix. What's more amazing is that I never felt hungry or restricted during the process. Can't recommend B&amp;B and Julianne enough. If you're on the fence — do it."</p>
+      </div>
+      <div class="tcard">
+        <div class="tcard-top">
+          <div class="tcard-avatar tcard-avatar-teal">A</div>
+          <div>
+            <div class="tcard-name">Amy</div>
+            <div class="tcard-meta">12-Week Programme</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="tcard-quote">"The programme has not only been about results on the scale – I have become a better version of myself, reflected in my relationships and career. Julianne is there to keep you on track and will tailor the programme to suit your life at any given time."</p>
+      </div>
+      <div class="tcard">
+        <div class="tcard-top">
+          <div class="tcard-avatar tcard-avatar-magenta">M</div>
+          <div>
+            <div class="tcard-name">Maria</div>
+            <div class="tcard-meta">12-Week Programme</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+        <p class="tcard-quote">"I tried every programme available and just couldn't get started — until B&amp;B. I have the healthiest relationship with food and lifestyle I've ever had. The app is so easy to use — it's an understatement to say it changed my life."</p>
+      </div>
+    </div>
+    <div style="text-align:center;padding-bottom:56px;">
+      <a href="testimonials.html" style="display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:600;color:var(--teal);text-decoration:none;border:1.5px solid rgba(26,114,114,0.22);padding:11px 24px;border-radius:9px;transition:border-color 0.15s,background 0.15s;" onmouseover="this.style.borderColor='var(--teal)';this.style.background='rgba(26,114,114,0.05)'" onmouseout="this.style.borderColor='rgba(26,114,114,0.22)';this.style.background='transparent'">Read all client stories &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ════════════════ VALUE (CREAM) ════════════════ -->
+  <section class="section-cream">
+    <div class="value-inner">
+      <div class="value-left">
+        <h2>Every session <em>built</em> around where you are right now.</h2>
+        <p>No generic plans. No guesswork. Every programme is tailored to your trimester, your delivery, your recovery, your goals — and your real life as a mother.</p>
+      </div>
+      <div>
+        <div class="programme-card">
+          <div class="prog-heading">Your Programme · Week by Week</div>
+          <div class="session-row">
+            <div class="session-icon si-teal">🏋️</div>
+            <div>
+              <div class="session-title">Strength &amp; Conditioning</div>
+              <div class="session-sub">Modified for your trimester</div>
+            </div>
+            <div class="session-tag st-teal">Prenatal</div>
+          </div>
+          <div class="session-row">
+            <div class="session-icon si-pink">🧘</div>
+            <div>
+              <div class="session-title">Pelvic Floor Rehabilitation</div>
+              <div class="session-sub">Progressive, week-by-week recovery</div>
+            </div>
+            <div class="session-tag st-pink">Postnatal</div>
+          </div>
+          <div class="session-row">
+            <div class="session-icon si-magenta">🥗</div>
+            <div>
+              <div class="session-title">Nutrition Check-in</div>
+              <div class="session-sub">Support for you and your baby</div>
+            </div>
+            <div class="session-tag st-magenta">Ongoing</div>
+          </div>
+          <div class="session-row">
+            <div class="session-icon si-teal">💬</div>
+            <div>
+              <div class="session-title">1:1 Coaching Call</div>
+              <div class="session-sub">Review, adapt, progress</div>
+            </div>
+            <div class="session-tag st-teal">Weekly</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ APPROACH (TEAL) ════════════════ -->
+  <section class="section-teal">
+    <div class="section-header-2col">
+      <h2>We don't guess. We listen, <em>assess,</em> and programme for you.</h2>
+      <p>Every B&amp;B client begins with a full consultation. We collaborate with your GP, midwife, and physio to ensure your programme is always medically aligned and completely right for your body.</p>
+    </div>
+    <div class="approach-cards">
+      <div class="acard">
+        <div class="acard-eyebrow">Evidence-Based</div>
+        <div class="acard-title">Your health, always first.</div>
+        <div class="acard-body">Programming grounded in current pre &amp; postnatal research and medical guidance — so you can move with total confidence at every stage of your journey.</div>
+        <div class="acard-img">
+          <img src="workshop2.jpg" alt="Barbells & Babies coaching workshop" style="width:100%;height:100%;object-fit:cover;object-position:center 35%;border-radius:14px;">
+        </div>
+      </div>
+      <div class="acard">
+        <div class="acard-eyebrow">Holistic View</div>
+        <div class="acard-title">Your goals. Your timeline.</div>
+        <div class="acard-body">We look at the whole picture — movement, nutrition, recovery, sleep, and mental wellbeing — and build a programme that works for your real life.</div>
+        <div class="acard-img">
+          <img src="julianne-training.jpg" alt="Julianne leading a training class" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:14px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ ABOUT JULIANNE (CREAM) ════════════════ -->
+  <section class="section-cream" id="about">
+    <div class="about-inner">
+      <div class="about-img-wrap">
+        <img class="about-img" src="julianne.png" alt="Julianne Meade-McIntyre">
+        <div class="about-img-badge">
+          Founder &amp;<br>Lead Coach<br><span style="font-size:18px;">🌸</span>
+        </div>
+      </div>
+      <div>
+        <div class="about-eyebrow">Meet Your Coach</div>
+        <div class="about-name">Julianne<br>Meade-McIntyre</div>
+        <div class="about-role">Founder, Barbells &amp; Babies</div>
+        <p class="about-bio">Julianne is a Registered General Nurse, Clinical Pain Management Specialist, and certified Pre &amp; Postnatal Exercise and Nutrition Trainer. What makes Barbells &amp; Babies different is exactly that combination — the medical background that means Julianne doesn't just design workouts, she understands your body at a clinical level.</p>
+        <p class="about-bio">Her approach is refreshingly realistic. No quick fixes, no pressure — just custom fitness, nutrition and lifestyle plans that fit around real women, real families, and real life. Hundreds of mothers across Ireland have trusted her with their most important health journey.</p>
+        <div class="cred-pills">
+          <span class="cp cp-teal">Registered General Nurse (RGN)</span>
+          <span class="cp cp-pink">Clinical Pain Management Specialist</span>
+          <span class="cp cp-teal">Certified Pre/Postnatal Trainer</span>
+          <span class="cp cp-magenta">Nutrition Coach</span>
+          <span class="cp cp-pink">Personal Trainer</span>
+          <span class="cp cp-teal">GPP Qualified</span>
+        </div>
+        <blockquote class="about-quote">"A realistic, medically backed approach — custom plans that fit your family, your lifestyle, and your goals."</blockquote>
+        <div class="about-cta">
+          <button class="btn-primary" onclick="window.open('https://barbellsandbabies.online/waitlist','_blank')">Join the Priority List &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ HOW IT WORKS (WHITE) ════════════════ -->
+  <section class="section-white" style="padding-top: 84px;">
+    <div class="section-header-2col light" style="padding-bottom: 56px;">
+      <h2>How it works. Simple, supported, and built for real life.</h2>
+      <p>From your first call to your final session, every step of the B&amp;B journey is personal, safe, and genuinely effective.</p>
+    </div>
+    <div class="steps-inner">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-title">Free Consultation</div>
+        <p class="step-body">Book a free 30-minute call with Julianne. We'll talk about where you are, what you need, and what the right programme looks like for you — no obligation, no pressure.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-title">Your Bespoke Plan</div>
+        <p class="step-body">Julianne builds your programme from scratch — tailored to your trimester or postnatal stage, your goals, your current fitness level, and your schedule.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-title">Move. Recover. Thrive.</div>
+        <p class="step-body">Train with full support from Julianne. Weekly check-ins, programme adjustments, and direct access so you're never left wondering if you're doing it right.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CLIENT STORIES (WHITE) ════════════════ -->
+  <section class="section-white" style="padding-top: 8px;">
+    <div class="stories-marquee-wrap">
+      <div class="stories-marquee-track">
+        <span class="story-marquee-item smi-dark">Real results from real mothers</span>
+        <span class="story-marquee-item smi-accent">💕 Real results</span>
+        <span class="story-marquee-item smi-dark">Real results from real mothers</span>
+        <span class="story-marquee-item smi-accent">💕 Real results</span>
+        <span class="story-marquee-item smi-dark">Real results from real mothers</span>
+        <span class="story-marquee-item smi-accent">💕 Real results</span>
+        <span class="story-marquee-item smi-dark">Real results from real mothers</span>
+        <span class="story-marquee-item smi-accent">💕 Real results</span>
+      </div>
+    </div>
+
+    <div class="case-cards">
+      <!-- Case study -->
+      <div class="case-card">
+        <div class="case-eyebrow">Client Story</div>
+        <div class="case-name">Debbie — Postnatal Programme</div>
+        <p class="case-quote">"I truly believed it was impossible. Between sleepless nights, returning to work, and feeling completely drained, I was stuck. Then I started the 8-week programme with B&amp;B, and everything changed. Julianne was a constant source of support and motivation — her realistic tools and manageable home workouts actually fit into my chaotic schedule. I now have more energy, feel like myself again, and feel ready for baby #2."</p>
+        <div class="case-stats">
+          <div>
+            <div class="cs-num">8wk</div>
+            <div class="cs-label">Programme length</div>
+          </div>
+          <div>
+            <div class="cs-num">★★★★★</div>
+            <div class="cs-label">5-star review</div>
+          </div>
+          <div>
+            <div class="cs-num">#2</div>
+            <div class="cs-label">Baby on the way</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:18px;">
+          <a href="testimonials.html" class="btn-case" style="text-decoration:none;">Read her story &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Visual card -->
+      <div class="visual-case-card">
+        <div class="vcg">
+          <img class="vcg-img" src="julianne-coaching.jpg" alt="Julianne presenting" style="object-position:center 25%;">
+          <img class="vcg-img" src="workshop2.jpg"        alt="B&B workshop"       style="object-position:center 30%;">
+          <img class="vcg-img" src="julianne-training.jpg" alt="Julianne training"  style="object-position:center 20%;">
+          <img class="vcg-img" src="workshop.png"          alt="B&B coaching"       style="object-position:center 20%;">
+        </div>
+        <div class="vc-overlay"></div>
+        <div class="vc-content">
+          <div class="vc-brand">Barbells &amp; Babies</div>
+          <div class="vc-notif">
+            <div class="vcn-icon">🌸</div>
+            <div>
+              <div class="vcn-title">Programme complete. You did it.</div>
+              <div class="vcn-sub">8-week postnatal programme · Debbie</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CTA SECTION ════════════════ -->
+  <div class="cta-section">
+    <svg class="cta-grain" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <filter id="grain">
+        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+        <feColorMatrix type="saturate" values="0"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#grain)"/>
+    </svg>
+    <div class="cta-lights"></div>
+
+    <div class="cta-inner">
+      <!-- Booking card visual -->
+      <div class="booking-card-wrap">
+        <div class="booking-card">
+          <div class="bc-float-badge">FREE<br>CALL<br>📞</div>
+          <div class="bc-outer">
+            <div class="bc-inner">
+              <div class="bc-header">
+                <div class="bc-avatar">🌸</div>
+                <div>
+                  <div class="bc-name">Julianne Meade-McIntyre</div>
+                  <div class="bc-role">Pre &amp; Postnatal Specialist</div>
+                </div>
+              </div>
+              <div class="bc-row">
+                <span class="bc-key">Next start</span>
+                <span class="bc-val" style="color:var(--magenta);font-weight:700;">2nd March 2025</span>
+              </div>
+              <div class="bc-row">
+                <span class="bc-key">Format</span>
+                <span class="bc-val">Online · B&amp;B App</span>
+              </div>
+              <div class="bc-row">
+                <span class="bc-key">Includes</span>
+                <span class="bc-val">Fitness + Nutrition + Lifestyle</span>
+              </div>
+              <div class="bc-row">
+                <span class="bc-key">Spots</span>
+                <span class="bc-val free">Limited — join the list now</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class="cta-text">
+        <h2>The next programme starts 2nd March. Spots are limited.</h2>
+        <p>Join the priority list now and be the first to secure your place on the next round of Barbells &amp; Babies — the realistic, medically backed programme hundreds of Irish mothers swear by.</p>
+        <div class="cta-btns">
+          <button class="btn-cta-white" onclick="window.open('https://barbellsandbabies.online/waitlist','_blank')">Join the Priority List &rarr;</button>
+          <button class="btn-cta-ghost" onclick="window.open('https://trainerize.me/profile/barbellsandbabies','_blank')">Download the B&amp;B App</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <img src="logo.png" alt="Barbells & Babies" style="width:44px;height:44px;object-fit:contain;">
+          <div class="footer-brand-name">Barbells &amp; Babies</div>
+          <div class="footer-brand-tagline">the programme · the lifestyle · the change</div>
+          <div class="footer-contact-row"><span>✉</span><span>barbellsandbabiez@gmail.com</span></div>
+          <div class="footer-contact-row"><span>📞</span><span>087 118 4984</span></div>
+          <div class="footer-contact-row"><span>🌐</span><span>barbellsandbabies.ie</span></div>
+        </div>
+        <div>
+          <div class="footer-col-title">Programme</div>
+          <a class="footer-link" href="https://barbellsandbabies.online/waitlist" target="_blank">Join the Priority List</a>
+          <a class="footer-link" href="https://trainerize.me/profile/barbellsandbabies" target="_blank">B&amp;B App</a>
+          <a class="footer-link" href="https://barbellsandbabiesshop.myshopify.com" target="_blank">B&amp;B Shop</a>
+          <a class="footer-link" href="https://barbellsandbabies.ie/programmes/" target="_blank">About the Programme</a>
+        </div>
+        <div>
+          <div class="footer-col-title">About</div>
+          <a class="footer-link">About Julianne</a>
+          <a class="footer-link">Our Approach</a>
+          <a class="footer-link">Credentials</a>
+          <a class="footer-link">Testimonials</a>
+        </div>
+        <div>
+          <div class="footer-col-title">Follow Along</div>
+          <a class="footer-link" href="https://www.instagram.com/barbells_and_babiez" target="_blank">Instagram @barbells_and_babiez</a>
+          <a class="footer-link" href="https://www.facebook.com/barbellsandbabiez" target="_blank">Facebook</a>
+          <a class="footer-link" href="https://www.tiktok.com/@juliannemeade.bandb" target="_blank">TikTok @juliannemeade.bandb</a>
+          <a class="footer-link" href="https://www.youtube.com/@barbellsandbabiez" target="_blank">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span class="footer-copy">© 2025 Barbells &amp; Babies · Julianne Meade-McIntyre · barbellsandbabies.ie</span>
+        <div class="footer-socials">
+          <a class="social-btn" href="https://www.instagram.com/barbells_and_babiez" target="_blank" style="text-decoration:none;">📸</a>
+          <a class="social-btn" href="https://www.facebook.com/barbellsandbabiez" target="_blank" style="text-decoration:none;">👥</a>
+          <a class="social-btn" href="https://www.tiktok.com/@juliannemeade.bandb" target="_blank" style="text-decoration:none;">🎵</a>
+          <a class="social-btn" href="https://www.youtube.com/@barbellsandbabiez" target="_blank" style="text-decoration:none;">▶</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
