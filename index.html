@@ -1178,6 +1178,165 @@
 
     /* ── DIVIDER ── */
     .section-divider { border: none; border-top: 1px solid var(--border); }
+
+    /* ══════════════════════════════════════
+       TABLET  ≤ 1024px
+    ══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .service-cards { grid-template-columns: repeat(3, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .hero-main { gap: 32px; padding: 60px 28px 52px; }
+      .cta-section { padding: 64px 48px; }
+      .cta-inner { gap: 48px; }
+    }
+
+    /* ══════════════════════════════════════
+       MOBILE  ≤ 768px
+    ══════════════════════════════════════ */
+    @media (max-width: 768px) {
+
+      /* NAV */
+      .nav-links { display: none; }
+      .nav-brand-sub { display: none; }
+      .nav-inner { padding: 0 16px; }
+      .btn-nav-cta { font-size: 12px; padding: 8px 14px; }
+
+      /* HERO */
+      .hero-main {
+        grid-template-columns: 1fr;
+        padding: 36px 20px 48px;
+        gap: 32px;
+      }
+      .hero-headline { font-size: clamp(36px, 9vw, 52px); }
+      .hero-right { display: none; }
+      .hero-social-proof { flex-wrap: wrap; }
+
+      /* STATS BAR */
+      .stats-inner {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      /* SECTION HEADERS */
+      .section-header-2col {
+        grid-template-columns: 1fr;
+        padding: 52px 20px 36px;
+        gap: 14px;
+      }
+      .section-header-2col h2 { font-size: clamp(28px, 7vw, 40px); }
+
+      /* SERVICE CARDS */
+      .service-cards {
+        grid-template-columns: 1fr 1fr;
+        padding: 0 20px 52px;
+        gap: 10px;
+      }
+      .scard:last-child { grid-column: span 2; }
+
+      /* CREDENTIALS STRIP */
+      .creds-strip { padding: 14px 0; }
+
+      /* TESTIMONIALS */
+      .testimonials {
+        grid-template-columns: 1fr !important;
+        padding: 28px 20px 16px;
+        gap: 12px;
+      }
+
+      /* VALUE SECTION */
+      .value-inner {
+        grid-template-columns: 1fr;
+        padding: 52px 20px;
+        gap: 36px;
+      }
+
+      /* APPROACH CARDS */
+      .approach-cards {
+        grid-template-columns: 1fr;
+        padding: 0 20px 52px;
+        gap: 12px;
+      }
+
+      /* ABOUT */
+      .about-inner {
+        grid-template-columns: 1fr;
+        padding: 52px 20px;
+        gap: 36px;
+      }
+      .about-img-badge { right: 14px; }
+      .about-name { font-size: clamp(28px, 8vw, 44px); }
+
+      /* HOW IT WORKS */
+      .steps-inner {
+        grid-template-columns: 1fr;
+        padding: 0 20px 52px;
+        gap: 12px;
+      }
+
+      /* STORIES MARQUEE */
+      .story-marquee-item { font-size: clamp(28px, 7vw, 44px); padding: 0 20px; }
+      .stories-marquee-wrap { margin-bottom: 36px; }
+
+      /* CASE CARDS */
+      .case-cards {
+        grid-template-columns: 1fr;
+        padding: 0 20px 52px;
+        gap: 12px;
+      }
+      .case-card { padding: 28px; }
+      .case-stats { gap: 20px; }
+      .visual-case-card { min-height: 300px; }
+
+      /* CTA SECTION */
+      .cta-section {
+        margin: 12px;
+        padding: 52px 24px;
+        border-radius: 24px;
+      }
+      .cta-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .cta-text { order: 1; }
+      .booking-card-wrap { order: 2; }
+      .cta-text h2 { font-size: clamp(28px, 7vw, 42px); }
+      .cta-btns { flex-direction: column; }
+      .btn-cta-white, .btn-cta-ghost { text-align: center; justify-content: center; }
+      .booking-card { width: 100%; max-width: 320px; margin: 0 auto; }
+      .bc-float-badge { right: -8px; }
+
+      /* FOOTER */
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      footer { padding: 44px 20px 28px; }
+      .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+      .footer-socials { justify-content: center; }
+    }
+
+    /* ══════════════════════════════════════
+       SMALL MOBILE  ≤ 480px
+    ══════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .service-cards { grid-template-columns: 1fr; }
+      .scard:last-child { grid-column: span 1; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; }
+      .btn-primary, .btn-outline { width: 100%; justify-content: center; }
+      .section-header-2col { padding: 44px 16px 28px; }
+      .service-cards { padding: 0 16px 44px; }
+      .approach-cards { padding: 0 16px 44px; }
+      .steps-inner { padding: 0 16px 44px; }
+      .case-cards { padding: 0 16px 44px; }
+      .testimonials { padding: 24px 16px 12px !important; }
+      .value-inner { padding: 44px 16px; }
+      .about-inner { padding: 44px 16px; }
+      .cta-section { margin: 8px; padding: 44px 20px; }
+      footer { padding: 44px 16px 28px; }
+      .tcard { padding: 22px; }
+    }
   </style>
 </head>
 <body>
